@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
+#  get 'entries/index'
+
+# get 'entries/new'
+
+#  get 'entries/create'
+  resources :entries, only: [:index, :new, :create]
+
   resources :books
 
   resources :authors
+
+  root "entries#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
